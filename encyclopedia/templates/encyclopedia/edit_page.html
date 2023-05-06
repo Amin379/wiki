@@ -1,0 +1,14 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{%block title%}
+Edit page
+{%endblock%}
+
+{%block body%}
+<p style="color: gray; font-size: small;">Strongly suggest you to use <a href="https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax">Markdown</a> format instead of raw text in the Text field.</p>
+<form action="/edit_page/{{title}}" method="post">
+    {{editPageForm.as_p}}
+    {%csrf_token%}
+    <input type="submit" value="Save">
+</form>
+{%endblock%}
